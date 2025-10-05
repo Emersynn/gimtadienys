@@ -31,6 +31,14 @@ h1 {
   
 }
 
+.page h1 {
+  font-family: 'Quicksand', sans-serif;
+  color: #3b2e5a;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin: 0 0 15px 0;
+  text-align: center;
+  white-space: normal;       /* leidžia ilgiems tekstams persitaikyti į kelias eilutes */
+}
 
 
 p, li, button {
@@ -63,14 +71,15 @@ p, li, button {
   left: 50%;
   transform: translate(-50%, -50%);
   
-  display: inline-block;      /* leidžia kortelei prisitaikyti prie headingo */
+  max-width: 600px;          /* visi puslapiai vienodo pločio */
+  width: 90vw;               /* mobiliesiems */
   padding: 20px;
   background: rgba(0,0,0,0.4);
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  transition: opacity 0.5s ease;
-
-  max-width: 90vw;            /* neperžengs telefono ekrano kraštų */
+  
+  overflow-y: auto;          /* jei tekstas ilgas, atsiranda scroll */
+  max-height: 90vh;          /* kad kortelė neperžengtų ekrano aukščio */
 }
 
 .hidden { 
@@ -180,3 +189,13 @@ p, li, button {
   transform: translateX(-50%);  /* tik horizontaliai centras */
 }
 
+@media (max-width: 768px) {
+  .page {
+    padding: 15px;
+    width: 95vw;
+    max-height: 95vh;
+  }
+  .page h1 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+}
