@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gimtadienio pakvietimas</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  
+  <div class="page" id="page1">
+  <h1>🎉Kvietimas į Gimtadieniuką!</h1>
+  
+  <p>
+    Labuka 🤩 Jei matai šį puslapį vadinasi esi kviečiamas į mano pasenimo dienos šventę, kurią minėsime ateinantį šeštadienį spalio 11 dieną.
+    Visų pirma norėčiau padėkoti, kad nepaisant visko vis dar esi mano draugu, artimu ir brangiu, ačiū už visapusišką palaikymą ir džiaugsme ir liūdesy 💜
+    Pagaliau šventei sugalvojau kažką įdomesnio, kas tikiuosi patiks ir jums lygiai taip pat kaip man, tai labai kviečiu susipažinti su vakaro planais 😉
+  
+  </p>
+  
+  <p>
+  📅 <a href="bday.ics" download class="date-link">2025 m. spalio 11 d., 19:20</a>
+</p>
+
+  
+  <button class="btn" onclick="nextPage(2)">Toliau ➡️</button>
+</div>
+
+
+<div class="page hidden" id="page2">
+  <section class="section" id="section1">
+    <h2>Pabėgimo kambarys - Majų Šventykla🛕</h2>
+    <p>Vuolia! Paslapties šydas nutrauktas, drauge keliausime į pabėgimo kambarį, sujungsime savo vargšes kelias smegenų ląsteles
+      ir bandysime išgelbėti žmoniją 🤺
+    </p>
+  </section>
+
+  <section class="section" id="section2">
+    <h2>Užduotis🪙</h2>
+    <p> Mūsų misija - nuvykti į šventyklą ir padėti sugrąžinti galias saulės dievui. 
+        Šventykla yra apsupta džiunglių, spąstų ir paslapčių. 
+        Užduotį turėsime atlikti per vieną valandą.</p>
+  </section>
+
+  <section class="section" id="section3">
+    <h2>Papildoma info</h2>
+    <p>Rekomenduoju susirinkti bent 10-15 minučių anksčiau.
+      Specialios aprangos kaip supratau nereikia, svarbu būtų patogu, jei ir per gražiai apsirengsit - neišsimurzinsim 😄
+      Visgi labiau turėsim naudoti savo protelį, o ne fizinius gebėjimus 🧠
+      Sėkmingai (?) įvykdžius užduotį eisime pelnytai atsipūsti.
+      Kaip kokiuose ads'uose spausk "Toliau" ir sužinosi 😏
+ <ul class="event-info">
+    <li>🕒 Laikas: 2025 m. spalio 11 d., 19:30</li>
+    <li>📍 Vieta: 
+      <a href="https://www.google.com/maps/place/CODE+ROOM+pab%C4%97gimo+kambariai/@54.7167228,25.29929,17z/data=!3m1!4b1!4m6!3m5!1s0x46dd97f4ad13a91b:0xb66b4f989859003a!8m2!3d54.7167198!4d25.3041609!16s%2Fg%2F11fqcc_x5p?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D" 
+         target="_blank">
+       Coderoom Žirmūnų g. 68, Vilnius
+      </a>
+    </li>
+  </ul>
+
+    </p>
+  </section>
+
+  <button class="btn" onclick="nextPage(3)">Toliau ➡️</button>
+</div>
+
+<div class="page hidden" id="page3">
+  <h1>It's party time!🍸</h1>
+
+  <!-- Sekcija 1: Aprašymas + detalės -->
+  <section class="party-intro">
+    <p>
+      Po pasižaidimų keliausime į nuostabų barą <strong>Alchemikas✨</strong>.
+      Tiems, kas nebuvę — manau tikrai patiks tas vaibas!
+      Net jei iš storo meniu nieko neišsirinksit, barmenai žiauriai cool ir pasiruošę
+      įgyvendinti visus jūsų norus — tik pasidalinkit jais.
+    </p>
+
+    <ul class="event-info">
+      <li>🕒 Staliukas rezervuotas atvykimui tarp <strong>21:00 – 21:30</strong>.</li>
+      <li>📍 Vieta:
+        <a href="https://www.google.com/maps/place/Alchemikas/@54.6839707,25.2762683,17z/data=!3m1!4b1!4m6!3m5!1s0x46dd941185efe997:0x49d50f23850225e8!8m2!3d54.6839676!4d25.2788432!16s%2Fg%2F11bx89wvv3?entry=ttu"
+           target="_blank">
+          Alchemikas ✨, Islandijos g. 1, Vilnius
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="extra-section">
+    <h2>Diskleimeris</h2>
+    <p>
+      Už viską moku aš, pramogos 100%, kokteiliai iki 3 vnt./per person, kad nebankrutuočiau 💸 
+      Oki, šiuo metu informacijos tiek, jei kažkas negerai, būtinai sakykit derinsimės, kalbėsimės,
+      jei turite pasiūlymų išklausysiu ir padarysim taip, kad būtų tikrai gerai.
+      Ypatingai jei norit afterio, torto ar chillo dar ir po bariuko, bet čia jūs galvokit xD
+      Rekomenduoju nebūti tuščiu skrandžiu, nes renkantis prioritetus į mano planą maistas netilpo :DDD
+      Nebent galim nuvaryti paėsti prieš veiklą, bet nu žiūrėkit xD
+    </p>
+<a href="https://m.me/ernesta.bakaityte" target="_blank" class="messenger-link">
+  💬 Parašyk per Messą
+</a>
+
+  </section>
+
+  <button class="btn" onclick="nextPage(1)">⬅️ Atgal</button>
+</div>
+
+<video id="bgVideoPage2" autoplay loop muted playsinline>
+  <source src="jungle.mp4" type="video/mp4">
+</video>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #c3aed6, #8675a9);
+  color: #333;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+
+
+h1 {
+    font-family: 'Quicksand', sans-serif;
+  color: #3b2e5a;
+  white-space: nowrap;       
+  font-size: clamp(1.8rem, 5vw, 3rem); 
+  margin: 0 auto 10px auto;
+  text-align: center;
+  
+}
+
+
+
+p, li, button {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(0.9rem, 4vw, 1.1rem);
+}
+
+.btn {
+  padding: 10px 20px; /* šiek tiek mažiau „masyvus“ */
+  border: 2px solid #fff; /* švelnus rėmelis suteikia „lengvumo“ */
+  border-radius: 20px; /* švelnesnis, ne toks apkūnus */
+  background: linear-gradient(135deg, #c3aed6, #d9b3f0); /* šviesesnis gradientas */
+  color: #3b2e5a; /* tamsiai violetinė, kad derėtų su headings */
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 10px rgba(59,46,90,0.2); /* lengvesnis shadow */
+  background: linear-gradient(135deg, #d9b3f0, #e6caff); /* šiek tiek „pakylėjęs“ efektas */
+}
+
+.page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  display: inline-block;      /* leidžia kortelei prisitaikyti prie headingo */
+  padding: 20px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: opacity 0.5s ease;
+
+  max-width: 90vw;            /* neperžengs telefono ekrano kraštų */
+}
+
+.hidden { 
+  display: none; 
+}
+
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.date {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #f3e5f5; /* švelniai violetinė, kad išsiskirtų */
+  margin-top: 15px;
+}
+
+.date-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.date-link:hover {
+  color: #e0e0ff; /* švelnesnis kontrastas */
+  transform: translateY(-2px); /* pakėlimas kaip mygtuko */
+}
+
+#bgVideoPage2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;      /* po kortelėmis */
+  display: none;    /* rodysim tik page2 */
+}
+
+.page .section {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(0,0,0,0.3); /* lengvas fonas, kad matytųsi video */
+  border-radius: 15px;
+  text-align: center;
+}
+
+.page .section h2 {
+  margin-top: 0;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #fff;
+}
+
+.page .section p {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: #eee;
+}
+
+.event-info {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.event-info li {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.event-info a {
+  color: #e0e0ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.event-info a:hover {
+  color: #ffd6ff;
+}
+
+.messenger-link {
+  display: inline-block;
+  margin: 20px 0 60px 0; /* viršuje 20px, apačioje 60px */
+  padding: 10px 20px;
+  background-color: #b388eb;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Quicksand', sans-serif;
+  box-shadow: 0 0 10px rgba(179, 136, 235, 0.4);
+  transition: all 0.3s ease;
+}
+
+.messenger-link:hover {
+  background-color: #c7aefc;
+  box-shadow: 0 0 15px rgba(199, 174, 252, 0.6);
+  transform: translateY(-2px);
+}
+
+.page#page2 {
+  top: 5%;           /* šiek tiek nuo viršaus */
+  transform: translateX(-50%);  /* tik horizontaliai centras */
+}
+
