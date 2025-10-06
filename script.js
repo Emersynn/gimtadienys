@@ -50,25 +50,23 @@ function animate() {
 animate();
 
 function nextPage(n) {
-  // Paslepiam visas korteles
   document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
-  document.getElementById(`page${n}`).classList.remove('hidden');
+  const page = document.getElementById('page' + n);
+  page.classList.remove('hidden');
 
-  // Išsaugom, kuriame puslapyje esam
-  localStorage.setItem('currentPage', n);
-
-  // Fono valdymas
   const video = document.getElementById('bgVideoPage2');
-  const canvas = document.getElementById('stars');
 
   if (n === 2) {
     video.style.display = 'block';
-    canvas.style.display = 'none';
   } else {
     video.style.display = 'none';
-    canvas.style.display = 'block';
   }
+
+  // scrollinam visada į viršų
+  window.scrollTo({ top: 0, behavior: 'instant' });
 }
+
+
 
 // Kai puslapis užkraunamas
 window.addEventListener('DOMContentLoaded', () => {

@@ -1,14 +1,16 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #c3aed6, #8675a9);
   color: #333;
   text-align: center;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* Nebereikia height:100vh ir display:flex */
 }
+
 
 canvas {
   position: fixed;
@@ -31,13 +33,13 @@ h1 {
   
 }
 
+
 .page h1 {
   font-family: 'Quicksand', sans-serif;
   color: #3b2e5a;
   font-size: clamp(1.8rem, 5vw, 3rem);
   margin: 0 0 15px 0;
-  text-align: center;
-  white-space: normal;       /* leidžia ilgiems tekstams persitaikyti į kelias eilutes */
+  white-space: normal; /* leidžia ilgiems headingams persitaikyti */
 }
 
 
@@ -66,21 +68,21 @@ p, li, button {
 }
 
 .page {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-  max-width: 600px;          /* visi puslapiai vienodo pločio */
-  width: 90vw;               /* mobiliesiems */
+  position: relative;    /* ne absolute */
+  transform: none;       /* pašalinti translate(-50%, -50%) */
+  top: auto;             /* nebetempia kortelės nuo ekrano centro */
+  max-height: none;      /* leisti kortelei augti pagal turinį */
+  overflow-y: visible;   /* nebebus scroll viduje */
+  margin: 40px auto;     /* centras horizontaliai + tarpai viršui/apačiai */
+  width: 90vw;
+  max-width: 600px;
   padding: 20px;
   background: rgba(0,0,0,0.4);
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  
-  overflow-y: auto;          /* jei tekstas ilgas, atsiranda scroll */
-  max-height: 90vh;          /* kad kortelė neperžengtų ekrano aukščio */
 }
+
+
 
 .hidden { 
   display: none; 
@@ -118,9 +120,10 @@ p, li, button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;      /* po kortelėmis */
-  display: none;    /* rodysim tik page2 */
+  z-index: -1;
+  display: none;
 }
+
 
 .page .section {
   margin: 20px 0;
@@ -184,11 +187,6 @@ p, li, button {
   transform: translateY(-2px);
 }
 
-.page#page2 {
-  top: 5%;           /* šiek tiek nuo viršaus */
-  transform: translateX(-50%);  /* tik horizontaliai centras */
-}
-
 @media (max-width: 768px) {
   .page {
     padding: 15px;
@@ -198,4 +196,8 @@ p, li, button {
   .page h1 {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
+}
+
+.page#page3 {
+  margin-top: 120px; /* pakeliam truputį žemiau */
 }
