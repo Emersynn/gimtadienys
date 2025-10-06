@@ -1,17 +1,26 @@
-html, body {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   margin: 0;
-  padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #c3aed6, #8675a9);
+  background: linear-gradient(135deg, #c3aed6 0%, #8675a9 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
   color: #333;
   text-align: center;
-  min-height: 100vh;
-  width: 100%;
-  overflow-x: hidden; /* 👈 užblokuoja šoninį slankiojimą */
+  overflow-x: hidden;
+
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: center; /* horizontaliai centras */
+  align-items: center;     /* vertikaliai centras */
+  flex-direction: column;
 }
+
+
 
 
 canvas {
@@ -24,25 +33,30 @@ canvas {
 }
 
 
+
 h1 {
-  font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
   color: #3b2e5a;
-  white-space: nowrap;
-  font-size: clamp(1.4rem, 4.5vw, 2.8rem); /* 👈 truputį mažiau agresyviai */
-  margin: 0 auto 15px auto;
+  white-space: nowrap;       
+  font-size: clamp(1.8rem, 5vw, 3rem); 
+  margin: 0 auto 10px auto;
   text-align: center;
-  overflow: hidden; /* jei ką – nebus horizontal scroll */
+  
 }
 
 
-
-.page h1 {
+#page1 h1 {
   font-family: 'Quicksand', sans-serif;
   color: #3b2e5a;
-  font-size: clamp(1.8rem, 5vw, 3rem);
-  margin: 0 0 15px 0;
-  white-space: normal; /* leidžia ilgiems headingams persitaikyti */
+  white-space: nowrap;             /* visada vienoje eilutėje */
+  font-size: clamp(1.5rem, 6vw, 2.5rem); /* automatiškai mažėja */
+  margin: 0 auto 10px auto;
+  text-align: center;
+  max-width: 100%;                 /* niekada neišeina iš kortelės */
+  overflow: hidden;                /* jei labai ilgas tekstas, nukirpamas subtiliai */
+  text-overflow: ellipsis;         /* „…“ jei tilptų labai mažai */
 }
+
 
 
 p, li, button {
@@ -70,19 +84,17 @@ p, li, button {
 }
 
 .page {
-  position: relative;    /* ne absolute */
-  transform: none;       /* pašalinti translate(-50%, -50%) */
-  top: auto;             /* nebetempia kortelės nuo ekrano centro */
-  max-height: none;      /* leisti kortelei augti pagal turinį */
-  overflow-y: visible;   /* nebebus scroll viduje */
-  margin: 40px auto;     /* centras horizontaliai + tarpai viršui/apačiai */
+  position: relative;
+  margin: 20px auto;
   width: 90vw;
   max-width: 600px;
   padding: 20px;
   background: rgba(0,0,0,0.4);
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  text-align: center;
 }
+
 
 
 
@@ -202,9 +214,4 @@ p, li, button {
 
 .page#page3 {
   margin-top: 120px; /* pakeliam truputį žemiau */
-}
-
-* {
-  box-sizing: border-box;
-  max-width: 100vw; /* 👈 niekas neišlįs už ekrano */
 }

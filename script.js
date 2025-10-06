@@ -1,7 +1,8 @@
+// 🌌 Žvaigždžių fonas (tik pirmajam puslapiui)
 const canvas = document.getElementById('stars');
 const ctx = canvas.getContext('2d');
 
-// Canvas dydžio nustatymas
+// Pritaikom dydį prie lango
 function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -9,7 +10,7 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-// Star klasė
+// Žvaigždės klasė
 class Star {
   constructor() {
     this.x = Math.random() * canvas.width;
@@ -34,11 +35,11 @@ class Star {
   }
 }
 
-// Sukuriame žvaigždes
+// Sukuriam žvaigždes
 let stars = [];
 for (let i = 0; i < 200; i++) stars.push(new Star());
 
-// Animacijos funkcija
+// Animacija
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   stars.forEach(star => {
@@ -49,40 +50,40 @@ function animate() {
 }
 animate();
 
+// 🌟 Puslapių perjungimas
 function nextPage(n) {
-  document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
-  const page = document.getElementById('page' + n);
-  page.classList.remove('hidden');
-
-  const video = document.getElementById('bgVideoPage2');
-
-  if (n === 2) {
-    video.style.display = 'block';
-  } else {
-    video.style.display = 'none';
-  }
-
-  // scrollinam visada į viršų
-  window.scrollTo({ top: 0, behavior: 'instant' });
-}
-
-
-
-// Kai puslapis užkraunamas
-window.addEventListener('DOMContentLoaded', () => {
+  const pages = document.querySelectorAll('.page');
   const video = document.getElementById('bgVideoPage2');
   const canvas = document.getElementById('stars');
 
-  // Gauta išsaugota reikšmė arba 1, jei nieko nėra
-  const savedPage = parseInt(localStorage.getItem('currentPage')) || 1;
+  // Paslepiam visus puslapius
+  pages.forEach(p => p.classList.add('hidden'));
 
-  // Užkraunam atitinkamą puslapį
-  nextPage(savedPage);
+  // Parodom tinkamą
+  const current = document.getElementById('page' + n);
+  current.classList.remove('hidden');
 
-  // Pirmo puslapio atveju užtikrinam, kad video paslėptas
-  if (savedPage !== 2) {
+  // Rodom/slepiam video ir canvas
+  if (n === 2) {
+    video.style.display = 'block';
+    canvas.style.display = 'none';
+  } else {
     video.style.display = 'none';
     canvas.style.display = 'block';
   }
+
+  // Išsaugom puslapį
+  localStorage.setItem('currentPage', n);
+
+  // Scrollinam į viršų
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+// 🌙 Kai puslapis kraunasi
+window.addEventListener('DOMContentLoaded', () => {
+  const savedPage = parseInt(localStorage.getItem('currentPage')) || 1;
+  nextPage(savedPage);
 });
 
+// ❌ Neleisti horizontalaus scroll
+document.body.style.overflowX = 'hidden';
